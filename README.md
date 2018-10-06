@@ -1,4 +1,4 @@
-# Rubiks-Cube
+# Rubik's Cube Solver
 
 ## Abstract:
 In this study, two methods were used to solver scrambled rubik's cube. It was done using Iterative Depth First Search (IDFS) or Iterative Deepening Search (IDS) and Iterative Deepening A* (IDA*). Two heuristics were used for IDA*. One of them uses pattern database. All methods were able to unscramble cube. However, time to unscramble cube increased exponentially with steps to solve the cube. IDA* with pattern database unscrambled cube the quickest.
