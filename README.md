@@ -1,38 +1,27 @@
 # Rubiks-Cube
 
-
 ## Abstract:
-In this project, three methods were used to classify emails (as spam and not spam). The classification is done using k nearest neighbor (kNN), Naive Bayes and Artificial Neural Network. Naive Bayes and Neural Network gave good results. kNN failed to give any result.
+In this study, two methods were used to solver scrambled rubik's cube. It was done using Iterative Depth First Search (IDFS) or Iterative Deepening Search (IDS) and Iterative Deepening A* (IDA*). Two heuristics were used for IDA*. One of them uses pattern database. All methods were able to unscramble cube. However, time to unscramble cube increased exponentially with steps to solve the cube. IDA* with pattern database unscrambled cube the quickest.
 
+## Algorithms:
+Two search algorithms were used to solve Rubik's cube.
+* Iterative Depth First Search (IDFS) or Iterative Deepening Search (IDS).
+* Iterative Deepening A* (IDA*)
 
-## Methadology:
+## Heuristics:
+Two heuristics were used for IDA*.
+* First is **corner_idge_sum_max**. It takes the maximum of the sum of manhattan distance of cube corners and sum of manhattan distance of edges.
+* Second is **corner_pattern_database**. It uses depth of corners configuration of cube as heuristic. Depth is assumed to be saved in **Pattern Database**
 
-### 1) Data Set Selection:
-Dataset used here is a subset of Enron Email Dataset provided by Enron Cooperation. The subset contains 33687 emails out of which 16545 are not spam/ham and 17142 are spam. This dataset can found in my [Google Drive](https://drive.google.com/open?id=18TVvrPHDs-8Ww7kPbZpJH-5Vuuol2H_X). This dataset's main purpose is to compare different approaches of text classification. The code can be run on any dataset. The only difference is that first line (subject line) of every email is removed. It can be changed by removing line 18: handle.__next__() of ReadPreprocessData.py.
-
-### 2) Feature Selection:
-Each word in email is considered a feature.
-
-### 3) Data Pre-processing:
-Following preprocessing techniques were used in order:
-* Convert to String
-* Convert to Lowercase
-* Remove numbers and special characters
-* Remove stop words
-* Convert to sparse vector
-
-### 4) Machine Learning Algorithm:
-As Supervised learning approach was used, kNN, Naive Bayes and Artificial Neural Network were used to classify.
+## Creating Pattern Database:
+In this problem, pattern database only uses depth of specific corners configuration. It can extend for depth of edges configuration. In that case, maximum of both will be used.
+Depth of corners configuration can be calculated by performing every possible move on every possible cube state. Root configuration will be configuration of solved cube with depth is equal to zero. Depth of further configurations will be equal to the configuration of the configuration it was derived from plus 1.
 
 ## Results:
-Good results were obtained from Naive Bayes and Artificial Neural Network. kNN failed to produce any results.
-
-## Report
-Detailed report is given in [Project-Report](../master/Project-Report.docx).
-
+Both algorithms were able to solve the cube. IDFS time increased rapidly with depth of solution. IDA* performd quite faster as compared to IDFS. IDA* worked even faster with pattern database. Detailed results can found in [Report](../master/Report-Format-1.docx).
 
 ## Conclusion:
-To conclude, both Naive Bayes and Neural Network give good results. kNN is not meant for sparse data.
+To conclude, both IDFS and IDA* can be used to unscramble 
 
 
 ## Contact
