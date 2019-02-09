@@ -25,7 +25,7 @@ To conclude, both IDFS and IDA* can be used to unscramble
 
 
 ## Contact
-You can get in touch with me on my LinkedIn Profile: [Farhan Shoukat](https://www.linkedin.com/in/farhan-shoukat-782542167/)
+You can get in touch with me on my LinkedIn Profile: [Farhan Shoukat](https://www.linkedin.com/in/farhan-shoukat/)
 
 
 ## License
